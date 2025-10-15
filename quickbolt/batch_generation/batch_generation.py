@@ -196,7 +196,7 @@ def generate_bad_urls(
     params_split = params.lstrip("/").split("/")
     params_keys = [f"{p}_{i}" for i, p in enumerate(params_split)]
 
-    corruptables = {"params": dict(zip(params_keys, params_split))}
+    corruptables = {"params": dict(zip(params_keys, params_split, strict=False))}
     if corrupt_query_params:
         corruptables.update(query_dict)
     corruptables = dh.flatten(corruptables)

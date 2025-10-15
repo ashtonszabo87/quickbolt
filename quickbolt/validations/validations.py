@@ -97,7 +97,7 @@ class Validations(object):
         differ = Differ()
         mismatches = []
         for u_refs, a_refs, e_refs in zip(
-            unscrubbed_refs, _actual_refs, _expected_refs
+            unscrubbed_refs, _actual_refs, _expected_refs, strict=False
         ):
             errors = dh.compare_dictionaries(
                 a_refs,
