@@ -1,5 +1,5 @@
 # Stage 1: Build dependencies
-FROM python:3.13
+FROM python:3.14
 
 # Set the working directory
 WORKDIR /quickbolt
