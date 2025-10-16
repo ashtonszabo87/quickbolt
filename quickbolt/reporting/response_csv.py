@@ -135,7 +135,7 @@ async def csv_to_dict(
         async with aopen(csv_data, encoding="ascii", newline="") as csv_file:
             data = [row async for row in AsyncDictReader(csv_file)]
     elif isinstance(csv_data, list):
-        data = [dict(zip(csv_data[0], r)) for r in csv_data[1:] if r]
+        data = [dict(zip(csv_data[0], r, strict=False)) for r in csv_data[1:] if r]
 
     if scrub:
         data = [scrub_data(d, full_scrub_fields=full_scrub_fields) for d in data]
